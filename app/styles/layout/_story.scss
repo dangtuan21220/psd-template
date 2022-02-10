@@ -1,0 +1,119 @@
+.story {
+    padding-top: 10rem;
+    background-color: white;
+
+    &-list {
+        @include flexbox(stretch, space-between);
+    }
+    &__item {
+        width: calc(33.33% - 2rem);
+    }
+    &__image {
+        @include size(100%, 24rem);
+        object-fit: cover;
+    }
+    &__media {
+        position: relative;
+        margin-bottom: 1.5rem;
+    }
+    &-date {
+        background-color: $third-color;
+        padding: 1.5rem 2rem;
+        @include flexbox(center, center, column);
+        color: white;
+        position: absolute;
+        bottom: 1rem;
+        left: -1rem;
+        z-index: 1;
+
+        &__number {
+            font-weight: bold;
+            font-size: 3rem;
+        }
+    }
+
+    &__header {
+        text-transform: uppercase;
+        font-weight: 500;
+        margin-bottom: 1.5rem;
+        line-height: 1.4;
+    }
+    &__desc {
+        color: $text-color;
+        font-weight: 300;
+        line-height: 1.5;
+        border-bottom: 1px solid #e5e5e5;
+        margin-bottom: 2rem;
+        padding-bottom: 2rem;
+    }
+
+    &-meta {
+        @include flexbox(center);
+        &__item {
+            margin-right: 2rem;
+        }
+        &__icon {
+            color: $third-color;
+            margin-right: 0.5rem;
+        }
+        &__number {
+            font-style: italic;
+            color: $text-color;
+        }
+    }
+
+    @include maxWidth(1023px) {
+        padding-top: 5rem;
+        &__image {
+            height: 14rem;
+        }
+        &-date {
+            padding: 1rem 1.5rem;
+        }
+        &__header {
+            font-size: 1.2rem;
+        }
+        &__desc {
+            font-size: 1.2rem;
+        }
+    }
+    @include maxWidth(767px) {
+        &-list {
+            display: block;
+        }
+        &__item {
+            width: 100%;
+            margin-bottom: 5rem;
+            padding: 0 0.5rem;
+        }
+    }
+}
+
+.map {
+    margin: 10rem 0 8rem;
+    background: linear-gradient(to bottom, rgba(white, 0.7), rgba(white, 0.6)),
+        url(../../images/img-map.png) no-repeat center / cover;
+    padding: 6rem 0;
+    
+    &__content {
+        @include flexbox(center, center, column);
+    }
+
+    &__title {
+        position: relative;
+        color: $line-color;
+        font-size: 2.4rem;
+        font-weight: bold;
+        color: $primary-color;
+        margin-top: 1.5rem;
+        padding-bottom: 2rem;
+
+        &::after {
+            content: "";
+            @include size(6rem, 3px);
+            background-color: $line-color;
+            @include absoluteCenter();
+            bottom: 0;
+        }
+    }
+}

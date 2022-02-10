@@ -1,0 +1,26 @@
+header.header($data = "1")
+    .container
+        .header__top
+            a.header__logo(href="index.html") TuVi
+            i.fa.fa-bars.menu-toggle
+            ul.header-menu
+                +menuLink("About")
+                +menuLink("Service")
+                +menuLink("Work")
+                +menuLink("Blog")
+                +menuLink("Contact")
+                li.header-menu__item
+                    a.header-menu__icon(href="#")
+                        i.fa.fa-shopping-cart
+                li.header-menu__item
+                    a.header-menu__icon(href="#")
+                        i.fa.fa-search
+        .header-content
+            h2.header-content__caption Creative template
+            h1.header-content__main Welcome to TuVi
+            a.header-content__more(href="#") Learn more
+        .header-bottom
+            +headerBottomItem("01", "Intro", "1", "is-active")
+            +headerBottomItem("02", "Work", "2")
+            +headerBottomItem("03", "About", "3")
+            +headerBottomItem("04", "Contacts", "4")

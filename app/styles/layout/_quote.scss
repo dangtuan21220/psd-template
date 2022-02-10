@@ -1,0 +1,102 @@
+.quote {
+    background-color: $gray-color;
+    padding: 6.5rem 0;
+
+    // &-container {
+    //     @include flexbox(center, space-between)
+    // }
+
+    &-arrow {
+        font-size: 3rem;
+        color: $gray-dark-color;
+        cursor: pointer;
+        padding: 1rem 2rem;
+    }
+
+    &__item {
+        padding: 0 5.5rem;
+        @include flexbox(center, space-between)
+    }
+    &__icon {
+        @include size(15rem);
+        @include flexbox(center, center);
+        border: 3px solid $third-color;
+        flex-shrink: 0;
+    }
+    &__info {
+        padding-left: 6rem;
+    }
+    &__desc {
+        font-size: 2rem;
+        font-weight: 300;
+        line-height: 1.5;
+        font-family: $secondary-font;
+        margin-bottom: 2.5rem;
+        font-style: italic;
+        color: $text-color;
+        @include textClamp(3);
+    }
+    &__author {
+        font-family: $third-font;
+        font-size: 2.4rem;
+        position: relative;
+        padding-left: 7rem;
+
+        &::after {
+            content: "";
+            @include size(6rem, 3px);
+            @include absoluteCenter("top");
+            left: 0;
+            background-color: $line-color;
+        }
+    }
+
+    // slick slider
+    .slick-initialized .slick-slide {
+        display: flex;
+    }
+    .slick-arrow {
+        background-color: transparent;
+        border: 0;
+        color: $gray-dark-color;
+        cursor: pointer;
+        font-size: 3rem;
+        padding: 1rem 2rem;
+        @include absoluteCenter("top");
+    }
+    .slick-prev {
+        left: 0;
+    }
+    .slick-next {
+        right: 0;
+    }
+
+    @include maxWidth(767px) {
+        padding: 3rem 0;
+        &-arrow {
+            display: none;
+        }
+
+        &__item {
+            flex-direction: column;
+            padding: 0;
+        }
+        &__icon {
+            @include size(10rem);
+            img {
+                max-width: 50%;
+            }
+        }
+        &__info {
+            padding-left: 0;
+            padding-top: 2rem;
+        }
+        &__desc {
+            display: block;
+            font-size: 1.6rem;
+        }
+        &__author {
+            font-size: 2rem;
+        }
+    }
+}

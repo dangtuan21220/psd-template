@@ -1,0 +1,68 @@
+mixin menuLink(title, href = "#")
+    li.header-menu__item
+        a.header-menu__link(href=href)= title
+
+mixin headerBottomItem(number, title, bg= "1", active="")
+    .header-bottom__item(class=active, data-bg=bg)
+        span.header-bottom__number= number
+        span.header-bottom__text= title
+
+mixin blockBox(caption, title, desc) 
+    .block-box
+        h3.block-box__caption= caption
+        h2.block-box__title= title
+        if desc
+            p.block-box__desc= desc
+
+mixin aboutItem(data)
+    .about__item
+        img.about__image(src= data.src, alt= data.alt)
+        .about__content
+            i.about__icon(class= data.iconClass)
+            span.about__title= data.title
+
+mixin numberItem(number, text)
+    .number-item
+        h4.number-item__count= number
+        span.number-item__text= text
+
+mixin serviceItem(src, title, desc)
+    .service-item
+        img.service-item__image(src = src)
+        .service-item__info
+            h3.service-item__title= title
+            p.service-item__desc= desc
+
+mixin wedoItem(src, title, desc, arrow, active= "")
+    .wedo-item(class= active)
+        .wedo-item__header
+            img.wedo-item__icon(src= src)
+            h3.wedo-item__title= title 
+            i.fal.wedo-item__arrow(class= arrow)
+        .wedo-item__content
+            .wedo-item__text= desc
+    
+mixin workItem(src, full = "", title = "Creatively designed", icon = "fa fa-home", desc = "Lorem ipsum, dolor sit")
+    .work__item(class = full)
+        img.work__image(src= src)
+        .work__content
+            i.work__icon(class= icon)
+            h3.work__title= title
+            span.work__desc= desc
+
+mixin storyItem(src, dateNumber = 15, dateText = "Jan", title = "Lorem ipsum dolor sit amet", desc = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore ex fugit reiciendis earum voluptate", views = 555, comment = 29)
+    li.story__item
+        .story__media
+            img.story__image(src= src)
+            .story-date
+                span.story-date__number= dateNumber
+                span.story-date__text= dateText
+        h3.story__header= title
+        p.story__desc= desc
+        .story-meta
+            .story-meta__item
+                i.fa.fa-eye.story-meta__icon
+                span.story-meta__number= views
+            .story-meta__item
+                i.fa.fa-comment.story-meta__icon
+                span.story-meta__number= comment

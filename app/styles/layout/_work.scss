@@ -1,0 +1,75 @@
+.work {
+    padding-top: 8rem;
+
+    &-list {
+        @include flexbox;
+        height: 78rem;
+    }
+
+    &__item {
+        height: 50%;
+
+        &--full {
+            height: 100%;
+        }
+    }
+
+    &__column {
+        width: 25%;
+    }
+    &__content {
+        color: white;
+        text-align: center;
+    }
+    &__icon {
+        font-size: 3rem;
+        margin-bottom: 1.5rem;
+    }
+    &__title {
+        text-transform: uppercase;
+        margin-bottom: 1.5rem;
+    }
+    &__desc {
+        font-family: $secondary-font;
+        font-weight: 300;
+        font-size: 1.5rem;
+        font-style: italic;
+    }
+    &__image {
+        @include size(100%);
+        object-fit: cover;
+    }
+
+    @include maxWidth(1600px) {
+        &-list {
+            height: 60rem;
+        }
+    }
+    @include maxWidth(1279px) {
+        &-list {
+            flex-wrap: wrap;
+            height: auto;
+            overflow: hidden;
+
+        }
+        &__column {
+            width: 50%;
+        }
+        &__item {
+            height: 40rem;
+            &--full {
+                height: 80rem;
+            }
+        }
+    }
+    @include maxWidth(767px) {
+        &__column {
+            width: 100%;
+        }
+        &__item, &__item--full {
+            height: auto;
+        }
+    }
+}
+
+@include hoverEffect(".work__item", ".work__content", "false")
